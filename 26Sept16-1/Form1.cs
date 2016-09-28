@@ -28,21 +28,21 @@ namespace _26Sept16_1
         private bool isInputValid()
         {
             double exam1, exam2;
-            if (double.TryParse(tbxExam1.Text, out exam1))
+            if (double.TryParse(tbxExam1.Text, out exam1) && double.TryParse(tbxExam2.Text, out exam2))
             {
-                if (exam1 >= 0 && exam1 <= 100) 
+                if ((exam1 >= 0 && exam1 <= 100) && (exam2 >= 0 && exam2 <= 100))
                 {
                     return true;
                 }
                 else
                 {
-                    MessageBox.Show("Exam 1 out of range", "Average", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Exams out of range", "Average", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
-            }
+            } 
             else
             {
-                MessageBox.Show("Exam 1 missing or not numeric", "Average", MessageBoxButtons.OK, 
+                MessageBox.Show("Exams missing or not numeric", "Average", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
 
                 return false;
