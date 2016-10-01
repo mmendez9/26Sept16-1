@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tbxExam1 = new System.Windows.Forms.TextBox();
-            this.tbxExam2 = new System.Windows.Forms.TextBox();
+            this.Exam1 = new System.Windows.Forms.TextBox();
+            this.Exam2 = new System.Windows.Forms.TextBox();
             this.tbxAverage = new System.Windows.Forms.TextBox();
             this.btmCalculate = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -37,19 +37,19 @@
             this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // tbxExam1
+            // Exam1
             // 
-            this.tbxExam1.Location = new System.Drawing.Point(83, 13);
-            this.tbxExam1.Name = "tbxExam1";
-            this.tbxExam1.Size = new System.Drawing.Size(100, 20);
-            this.tbxExam1.TabIndex = 0;
+            this.Exam1.Location = new System.Drawing.Point(83, 13);
+            this.Exam1.Name = "Exam1";
+            this.Exam1.Size = new System.Drawing.Size(100, 20);
+            this.Exam1.TabIndex = 0;
             // 
-            // tbxExam2
+            // Exam2
             // 
-            this.tbxExam2.Location = new System.Drawing.Point(83, 53);
-            this.tbxExam2.Name = "tbxExam2";
-            this.tbxExam2.Size = new System.Drawing.Size(100, 20);
-            this.tbxExam2.TabIndex = 1;
+            this.Exam2.Location = new System.Drawing.Point(83, 53);
+            this.Exam2.Name = "Exam2";
+            this.Exam2.Size = new System.Drawing.Size(100, 20);
+            this.Exam2.TabIndex = 1;
             // 
             // tbxAverage
             // 
@@ -106,8 +106,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btmCalculate);
             this.Controls.Add(this.tbxAverage);
-            this.Controls.Add(this.tbxExam2);
-            this.Controls.Add(this.tbxExam1);
+            this.Controls.Add(this.Exam2);
+            this.Controls.Add(this.Exam1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -117,8 +117,8 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox tbxExam1;
-        private System.Windows.Forms.TextBox tbxExam2;
+        private System.Windows.Forms.TextBox Exam1;
+        private System.Windows.Forms.TextBox Exam2;
         private System.Windows.Forms.TextBox tbxAverage;
         private System.Windows.Forms.Button btmCalculate;
         private System.Windows.Forms.Label label1;

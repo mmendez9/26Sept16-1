@@ -21,32 +21,52 @@ namespace _26Sept16_1
         {
             if (isInputValid() == true)
             {
-                MessageBox.Show("Got valid input", "Average", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                calAverage();
+                //MessageBox.Show("Got valid input", "Average", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
         private bool isInputValid()
         {
             double exam1, exam2;
-            if (double.TryParse(tbxExam1.Text, out exam1) && double.TryParse(tbxExam2.Text, out exam2))
+            exam2 = 0;
+            exam1 = 0;
+            if (isFieldValid(Exam1, exam1) && isFieldValid(Exam2, exam2))
+                return true;
+            else
+                return false;
+        }
+
+        private bool isFieldValid(TextBox name, double exm)
+        {
+            if (double.TryParse(name.Text,out exm))
             {
-                if ((exam1 >= 0 && exam1 <= 100) && (exam2 >= 0 && exam2 <= 100))
-                {
+                if (exm >= 0 && exm <= 100)
                     return true;
-                }
                 else
                 {
-                    MessageBox.Show("Exams out of range", "Average", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(name.Name + " out of range", "Average", 
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
-            } 
+            }
             else
             {
-                MessageBox.Show("Exams missing or not numeric", "Average", MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-
+                MessageBox.Show(name.Name + " missing or not numeric", "Average", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
+        }
+
+        private void calAverage()
+        {
+            double average, ex1, ex2;
+
+            ex1 = double.Parse(Exam1.Text);
+            ex2 = double.Parse(Exam2.Text);
+
+            average = (ex1 + ex2) / 2;
+            tbxAverage.Text = average.ToString() + "%";
         }
     }
 }
